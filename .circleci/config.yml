@@ -60,18 +60,8 @@ workflows:
           build-config: Debug
           framework: netcoreapp2.1
       - build/run-build:
-          name: 2.1.700 Alpine Debug Build
-          image-tag: "2.1.700-alpine"
-          build-config: Debug
-          framework: netcoreapp2.1
-      - build/run-build:
           name: 2.1.700 Release Build
           image-tag: "2.1.700"
-          build-config: Release
-          framework: netcoreapp2.1
-      - build/run-build:
-          name: 2.1.700 Alpine Release Build
-          image-tag: "2.1.700-alpine"
           build-config: Release
           framework: netcoreapp2.1
       - build/run-build:
@@ -80,18 +70,8 @@ workflows:
           build-config: Debug
           framework: netcoreapp2.1
       - build/run-build:
-          name: 2.2.300 Alpine Debug Build
-          image-tag: "2.2.300-alpine"
-          build-config: Debug
-          framework: netcoreapp2.1
-      - build/run-build:
           name: 2.2.300 Release Build
           image-tag: "2.2.300"
-          build-config: Release
-          framework: netcoreapp2.1
-      - build/run-build:
-          name: 2.2.300 Alpine Release Build
-          image-tag: "2.2.300-alpine"
           build-config: Release
           framework: netcoreapp2.1
 
@@ -102,18 +82,8 @@ workflows:
           build-config: Debug
           framework: netcoreapp2.1
       - build/run-build:
-          name: 2.1.604 Alpine Debug Build
-          image-tag: "2.1.604-alpine"
-          build-config: Debug
-          framework: netcoreapp2.1
-      - build/run-build:
           name: 2.1.604 Release Build
           image-tag: "2.1.604"
-          build-config: Release
-          framework: netcoreapp2.1
-      - build/run-build:
-          name: 2.1.604 Alpine Release Build
-          image-tag: "2.1.604-alpine"
           build-config: Release
           framework: netcoreapp2.1
       - build/run-build:
@@ -122,17 +92,7 @@ workflows:
           build-config: Debug
           framework: netcoreapp2.1
       - build/run-build:
-          name: 2.2.204 Alpine Debug Build
-          image-tag: "2.2.204-alpine"
-          build-config: Debug
-          framework: netcoreapp2.1
-      - build/run-build:
           name: 2.2.204 Release Build
           image-tag: "2.2.204"
-          build-config: Release
-          framework: netcoreapp2.1
-      - build/run-build:
-          name: 2.2.204 Alpine Release Build
-          image-tag: "2.2.204-alpine"
           build-config: Release
           framework: netcoreapp2.1
