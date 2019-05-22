@@ -23,16 +23,22 @@ exe dotnet restore "$rootDir"
 exe dotnet build --no-restore -f "$framework" -c "$config" "$testProj1"
 exe dotnet build --no-restore -f "$framework" -c "$config" "$testProj2"
 
+date
+
 # Execute the tests
 exe dotnet test --no-restore --no-build -f "$framework" -c "$config" \
 "$testProj1" \
 --results-directory "$rootDir/$testResults/output/" \
 --logger "\"trx;LogFileName=$(basename "$testProj1" .csproj).trx\""
 
+date
+
 exe dotnet test --no-restore --no-build -f "$framework" -c "$config" \
 "$testProj2" \
 --results-directory "$rootDir/$testResults/output/" \
 --logger "\"trx;LogFileName=$(basename "$testProj2" .csproj).trx\""
+
+date
 
 # Install trx2junit if not already installed
 if [ ! -f "$rootDir/$testResults/tools/trx2junit" ]
