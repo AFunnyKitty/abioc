@@ -48,25 +48,25 @@ date
 echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed."
 
 # Execute the tests
-exe dotnet test --no-restore --no-build -f "$framework" -c "$config" \
-"$testProj1" \
---results-directory "$rootDir/$testResults/output/" \
---logger "\"trx;LogFileName=$(basename "$testProj1" .csproj).trx\""
+echo "Executing the $testProj1 tests."
+temp1=$(dotnet test --no-restore --no-build -f "$framework" -c "$config" "$testProj1" --results-directory "$rootDir/$testResults/output/" --logger "\"trx;LogFileName=$(basename "$testProj1" .csproj).trx\"" --verbosity quiet)
 
 duration="$SECONDS"
 echo
 date
 echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed."
 
-exe dotnet test --no-restore --no-build -f "$framework" -c "$config" \
-"$testProj2" \
---results-directory "$rootDir/$testResults/output/" \
---logger "\"trx;LogFileName=$(basename "$testProj2" .csproj).trx\""
+echo "$temp1"
+
+echo "Executing the $testProj2 tests."
+temp2=$(dotnet test --no-restore --no-build -f "$framework" -c "$config" "$testProj2" --results-directory "$rootDir/$testResults/output/" --logger "\"trx;LogFileName=$(basename "$testProj2" .csproj).trx\"" --verbosity quiet)
 
 duration="$SECONDS"
 echo
 date
 echo "$((duration / 60)) minutes and $((duration % 60)) seconds elapsed."
+
+echo "$temp2"
 
 # Install trx2junit if not already installed
 if [ ! -f "$rootDir/$testResults/tools/trx2junit" ]
